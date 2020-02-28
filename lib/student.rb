@@ -3,6 +3,8 @@ class Student
 
   def self.new_from_db(row)
     # create a new Student object given a row from the database
+    DB[:conn].execute(sql).map do |row|
+      self.new_from_db(row)
   end
 
   def self.all
