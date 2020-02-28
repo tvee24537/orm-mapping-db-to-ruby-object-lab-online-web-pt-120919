@@ -17,7 +17,7 @@ class Student
     
     sql = <<-SQL
       SELECT *
-      FROM songs
+      FROM students
     SQL
  
     DB[:conn].execute(sql).map do |row|
@@ -30,7 +30,7 @@ class Student
     
     sql = <<-SQL
       SELECT *
-      FROM songs
+      FROM students
       WHERE name = ?
       LIMIT 1
     SQL
